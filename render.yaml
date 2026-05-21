@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: askmydocs-pro
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_GEMINI_API_KEY
+        value: AIzaSyBO7_MU_WvaBBKw3iJ35j9AHG4g3ozV7Ho
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
